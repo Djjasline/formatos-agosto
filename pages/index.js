@@ -1,7 +1,8 @@
+
 import React, { useState, useRef } from "react";
 import SignatureCanvas from "react-signature-canvas";
 
-export default function InformeServicioApp() {
+export default function InformeServicioApp3() {
   const [responsableTecnico, setResponsableTecnico] = useState({ nombre: "", cargo: "", telefono: "" });
   const [responsableCliente, setResponsableCliente] = useState({ nombre: "", cargo: "", telefono: "" });
   const firmaAstapRef = useRef();
@@ -56,7 +57,7 @@ export default function InformeServicioApp() {
       </section>
 
       {/* Firmas */}
-      <h3 className="text-xl font-bold text-[#003366] border-b pb-1 mb-2">Firmas</h3>
+      <h3 className="section-title">Firmas</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <p className="font-semibold">Elaborado por ASTAP</p>
