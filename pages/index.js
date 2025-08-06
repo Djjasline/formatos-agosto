@@ -1,8 +1,7 @@
-
 import React, { useState, useRef } from "react";
 import SignatureCanvas from "react-signature-canvas";
 
-export default function InformeServicioApp3() {
+export default function Home() {
   const [responsableTecnico, setResponsableTecnico] = useState({ nombre: "", cargo: "", telefono: "" });
   const [responsableCliente, setResponsableCliente] = useState({ nombre: "", cargo: "", telefono: "" });
   const firmaAstapRef = useRef();
@@ -57,17 +56,19 @@ export default function InformeServicioApp3() {
       </section>
 
       {/* Firmas */}
-      <h3 className="section-title">Firmas</h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <p className="font-semibold">Elaborado por ASTAP</p>
-          <SignatureCanvas ref={firmaAstapRef} penColor="black" canvasProps={{ className: "border w-full h-24 bg-white rounded" }} />
+      <section>
+        <h3 className="text-xl font-bold text-[#003366] border-b pb-1 mb-2">Firmas</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <p className="font-semibold">Elaborado por ASTAP</p>
+            <SignatureCanvas ref={firmaAstapRef} penColor="black" canvasProps={{ className: "border w-full h-24 bg-white rounded" }} />
+          </div>
+          <div>
+            <p className="font-semibold">Aprobado por Cliente</p>
+            <SignatureCanvas ref={firmaClienteRef} penColor="black" canvasProps={{ className: "border w-full h-24 bg-white rounded" }} />
+          </div>
         </div>
-        <div>
-          <p className="font-semibold">Aprobado por Cliente</p>
-          <SignatureCanvas ref={firmaClienteRef} penColor="black" canvasProps={{ className: "border w-full h-24 bg-white rounded" }} />
-        </div>
-      </div>
+      </section>
     </div>
   );
 }
